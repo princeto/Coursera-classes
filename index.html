@@ -29,10 +29,12 @@
                         <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>     
-                <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                    <span class="fa fa-sign-in"></span> Login</a>
-                </span>      
+                    
+                <span class = "navbar-text">
+                    <a id = "openLogin">
+                    <span class = "fa fa-sign-in"></span>Login
+                    </a>
+                </span> 
         </div>
     </nav>
 
@@ -88,10 +90,9 @@
                     <!-- <button type="button" class="btn btn-sm btn-warning btn-block">Reserve Table</button>
                      -->
 
-                     
-                        <a data-toggle="modal" data-target="#reserveTable"
-                     class="btn btn-sm btn-warning btn-block text-dark"><h6>Reserve Table</h6></a>
-                     
+                     <a id = "triggerReserve" class = "btn btn-warning btn-block text-dark" >
+                        <strong>Reserve Table</strong></a>
+                        
                      <div id="reserveTable" class="modal fade" role="dialog">
                         <div class="modal-dialog modal-lg" role="content">
                             <!-- Modal content-->
@@ -349,17 +350,15 @@
                     $('#carouselButton').children('span').addClass('fa-pause');                    
                 }
             });
-          
-            $('#loginModalToggle').click(function(){
-                $('loginModal').modal('toggle');
-            
-         });
-
-         $('#reserveModalToggle').click(function(){
-                $('reserveModal').modal('toggle');
-            });
+           
+            $('#openLogin').click(function(){
+            $('#loginModal').modal('toggle');
         });
-            </script>
+        $('#triggerReserve').click(function(){
+            $('#reserveTable').modal('toggle');
+        });
+    })
+</script>            
     
 </body>
 
